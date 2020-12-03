@@ -23,11 +23,11 @@ function setup() {
 	ball4 = new ball(320, 500);
 	ball5 = new ball(270, 500);
 
-	rope1 = new rope(ball1.body, roof1.body, +100, 0);
-	rope2 = new rope(ball2.body, roof1.body, +50, 0);	
+	rope1 = new rope(ball1.body, roof1.body, +105, 0);
+	rope2 = new rope(ball2.body, roof1.body, +52.5, 0);	
 	rope3 = new rope(ball3.body, roof1.body, 0, 0);
-	rope4 = new rope(ball4.body, roof1.body, -50, 0);
-	rope5 = new rope(ball5.body, roof1.body, -100, 0);
+	rope4 = new rope(ball4.body, roof1.body, -52.5, 0);
+	rope5 = new rope(ball5.body, roof1.body, -105, 0);
 	
 }
 
@@ -36,7 +36,7 @@ function draw() {
   rectMode(CENTER);
   background("white");
   
- 
+	Engine.update(engine);
  
 
   ground.display ();
@@ -56,11 +56,11 @@ function draw() {
   roof1.display();
 }
 
-function keyPressed () {
-	if (keyCode === 38) {
-		Matter.Body.applyForce(ball1.body,ball1.body.position,{x:-6,y:-5});
+function keyPressed() {
+	if (keyCode === UP_ARROW) {
+   
+	  Matter.Body.applyForce(ball1.body,ball1.body.position,{x:105,y:105});
+	 }
 	}
-}
-
 
 
